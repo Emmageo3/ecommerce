@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Commande;
+use App\Models\Favori;
+use App\Models\Commentaire;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -17,6 +21,21 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+
+    public function commandes()
+    {
+        return $this->hasMany(Commande::class);
+    }
+
+    public function favoris()
+    {
+        return $this->hasMany(Favori::class);
+    }
+
+    public function commentaires()
+    {
+        return $this->hasMany(Commentaire::class);
+    }
 
     /**
      * The attributes that are mass assignable.

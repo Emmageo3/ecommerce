@@ -1,0 +1,543 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px){
+
+    header{
+        background-color: #ffefda;
+    }
+
+    header .logo{
+        text-align: center;
+        font-size: 30px;
+    }
+
+    header .navbar ul{
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        left: 0;right: 0;top: 0;
+        background-color: #ffefda;
+    }
+
+    header .navbar ul li{
+        padding: 1rem;
+        color: black;
+    }
+
+    header .navbar ul li a{
+        color: black;
+        text-transform: uppercase;
+    }
+
+    .logout button{
+        padding: 10px;
+        border-radius: 25px;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgba(0,0,0,.5);
+    }
+
+    .logout button:hover{
+        background-color: #000;
+        color: #fff;
+        transition: .5s;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+        transition: .5s;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown a:hover {background-color: #ddd;}
+
+
+        .show {display: block;
+            transform: ease-in-out .5s;}
+
+    .banniere{
+        background-image: url("../images/baniere.webp");
+        height: 40rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .wrapper ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .wrapper ul li{
+        margin: 15px;
+    }
+
+    .wrapper ul li a{
+        color: #000;
+    }
+
+    .wrapper ul li h4{
+        border: 2px solid #000;
+        padding: 10px;
+        margin: 20px;
+        text-transform:uppercase;
+    }
+
+    .wrapper ul img{
+        width: 18rem;
+    }
+
+    /*---------------connexion et inscription----------------*/
+
+    .login, .register{
+        margin-top: 2rem;
+    }
+
+    .login .contain{
+        width: 50%;
+        height: 500px;
+        margin: 0 auto;
+        border: 1px solid #fff;
+        box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    }
+
+    .register .contain{
+        width: 50%;
+        height: 600px;
+        margin: 0 auto;
+        border: 1px solid #fff;
+        box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    }
+
+    .login .contain .left{
+        float: left;
+        width: 50%;
+        height: 500px;
+        background-image: url('../images/loginimage.jpg');
+        background-size: cover;
+        box-sizing: border-box;
+    }
+
+    .register .contain .left{
+        float: left;
+        width: 50%;
+        height: 600px;
+        background-image: url('../images/registerimage.jpg');
+        background-size: cover;
+        box-sizing: border-box;
+    }
+
+    .login .contain .right{
+        float: right;
+        width: 50%;
+        height: 500px;
+        box-sizing: border-box;
+    }
+
+    .register .contain .right{
+        float: right;
+        width: 50%;
+        height: 600px;
+        box-sizing: border-box;
+    }
+
+    .login .contain .right .formBox{
+        width: 100%;
+        padding: 80px 40px;
+        box-sizing: border-box;
+        height: 500px;
+    }
+
+    .register .contain .right .formBox{
+        width: 100%;
+        padding: 80px 40px;
+        box-sizing: border-box;
+        height: 600px;
+    }
+
+    .login .contain .right .formBox p, .register .contain .right .formBox p{
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        color: #f0c690;
+    }
+
+    .login .contain .right .formBox input, .register .contain .right .formBox input{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .login .contain .right .formBox input[type="email"],
+    .login .contain .right .formBox input[type="Password"],
+    .register .contain .right .formBox input[type="email"],
+    .register .contain .right .formBox input[type="text"],
+    .register .contain .right .formBox input[type="Password"]{
+        border: none;
+        border-bottom: 2px solid #f0c690;
+        outline: none;
+        height: 40px;
+    }
+
+    .login .contain .right .formBox input[type="email"]:focus,
+    .login .contain .right .formBox input[type="Password"]:focus,
+    .register .contain .right .formBox input[type="email"]:focus,
+    .register .contain .right .formBox input[type="text"]:focus,
+    .register .contain .right .formBox input[type="Password"]:focus{
+        border-bottom:2px solid #000;
+    }
+
+    .login .contain .right .formBox input[type="submit"], .register .contain .right .formBox input[type="submit"]{
+        border: none;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        background-color: #000000;
+        cursor: pointer;
+    }
+
+    .login .contain .right .formBox input[type="submit"]:hover, .register .contain .right .formBox input[type="submit"]:hover{
+        background-color: #fff;
+        color: #000000;
+        border: 1px solid #000000;
+        transition: .5s;
+    }
+
+    .login .contain .right .formBox a, .register .contain .right .formBox a{
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 1rem;
+    }
+
+
+
+    /*---------shop by category---------*/
+    .shopper{
+        text-align: center;
+        margin: 1rem;
+        margin-top: 3rem;
+    }
+
+    .shopbycategorie{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .categorie{
+        margin: 2rem;
+    }
+
+
+    .categorie h2{
+        margin-top: 1rem;
+        background-color: #ffefda;
+        padding: 5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1)
+
+        ;
+    }
+
+    /*------------categories------------*/
+
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 674px) and (max-width: 1023px) {
+
+    header{
+        background-color: #ffefda;
+    }
+
+    header .navbar ul{
+        display: none;
+    }
+
+    .hamburger{
+        display: none;
+    }
+
+    .dropdown {
+       display: none;
+    }
+
+    .banniere{
+        background-image: url("../images/baniere.webp");
+        height: 25rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /*---------------connexion et inscription----------------*/
+
+    .login, .register{
+        margin-top: 1rem;
+    }
+
+    .login .contain{
+        width: 80%;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    .register .contain{
+        width: 80%;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .login .contain .left{
+        display: none;
+    }
+
+    .register .contain .left{
+        display: none;
+    }
+
+    .login .contain .right{
+        width: 100%;
+        height: 500px;
+        box-sizing: border-box;
+    }
+
+    .register .contain .right{
+        width: 100%;
+        height: 500px;
+        box-sizing: border-box;
+    }
+
+    .login .contain .right .formBox{
+        width: 100%;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        height: 500px;
+    }
+
+    .register .contain .right .formBox{
+        width: 100%;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        height: 600px;
+    }
+
+    .login .contain .right .formBox p, .register .contain .right .formBox p{
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        color: #f0c690;
+    }
+
+    .login .contain .right .formBox input, .register .contain .right .formBox input{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .login .contain .right .formBox input[type="email"],
+    .login .contain .right .formBox input[type="Password"],
+    .register .contain .right .formBox input[type="email"],
+    .register .contain .right .formBox input[type="text"],
+    .register .contain .right .formBox input[type="Password"]{
+        border: none;
+        border-bottom: 2px solid #f0c690;
+        outline: none;
+        height: 40px;
+    }
+
+    .login .contain .right .formBox input[type="email"]:focus,
+    .login .contain .right .formBox input[type="Password"]:focus,
+    .register .contain .right .formBox input[type="email"]:focus,
+    .register .contain .right .formBox input[type="text"]:focus,
+    .register .contain .right .formBox input[type="Password"]:focus{
+        border-bottom:2px solid #000;
+    }
+
+    .login .contain .right .formBox input[type="submit"], .register .contain .right .formBox input[type="submit"]{
+        border: none;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        background-color: #000000;
+        cursor: pointer;
+    }
+
+    .login .contain .right .formBox input[type="submit"]:hover, .register .contain .right .formBox input[type="submit"]:hover{
+        background-color: #fff;
+        color: #000000;
+        border: 1px solid #000000;
+        transition: .5s;
+    }
+
+    .login .contain .right .formBox a, .register .contain .right .formBox a{
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 1rem;
+    }
+
+
+
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 673px) {
+
+    header{
+        background-color: #ffefda;
+    }
+
+    header .navbar ul{
+        display: none;
+    }
+
+    .hamburger{
+        display: none;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .banniere{
+        background-image: url("../images/baniere.webp");
+        height: 10rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /*---------------connexion et inscription----------------*/
+
+    .login, .register{
+        margin-top: 1rem;
+    }
+
+    .login .contain{
+        width: 90%;
+        height: 400px;
+        margin: 0 auto;
+    }
+
+    .register .contain{
+        width: 90%;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .login .contain .left{
+        display: none;
+    }
+
+    .register .contain .left{
+        display: none;
+    }
+
+    .login .contain .right{
+        width: 100%;
+        height: 500px;
+        box-sizing: border-box;
+    }
+
+    .register .contain .right{
+        width: 100%;
+        height: 500px;
+        box-sizing: border-box;
+    }
+
+    .login .contain .right .formBox{
+        width: 100%;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        height: 500px;
+    }
+
+    .register .contain .right .formBox{
+        width: 100%;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        height: 600px;
+    }
+
+    .login .contain .right .formBox p, .register .contain .right .formBox p{
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        color: #f0c690;
+    }
+
+    .login .contain .right .formBox input, .register .contain .right .formBox input{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .login .contain .right .formBox input[type="email"],
+    .login .contain .right .formBox input[type="Password"],
+    .register .contain .right .formBox input[type="email"],
+    .register .contain .right .formBox input[type="text"],
+    .register .contain .right .formBox input[type="Password"]{
+        border: none;
+        border-bottom: 2px solid #f0c690;
+        outline: none;
+        height: 40px;
+    }
+
+    .login .contain .right .formBox input[type="email"]:focus,
+    .login .contain .right .formBox input[type="Password"]:focus,
+    .register .contain .right .formBox input[type="email"]:focus,
+    .register .contain .right .formBox input[type="text"]:focus,
+    .register .contain .right .formBox input[type="Password"]:focus{
+        border-bottom:2px solid #000;
+    }
+
+    .login .contain .right .formBox input[type="submit"], .register .contain .right .formBox input[type="submit"]{
+        border: none;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        background-color: #000000;
+        cursor: pointer;
+    }
+
+    .login .contain .right .formBox input[type="submit"]:hover, .register .contain .right .formBox input[type="submit"]:hover{
+        background-color: #fff;
+        color: #000000;
+        border: 1px solid #000000;
+        transition: .5s;
+    }
+
+    .login .contain .right .formBox a, .register .contain .right .formBox a{
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 1rem;
+    }
+
+
+}

@@ -51,6 +51,7 @@
                             <th>Image</th>
                             <th></th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,6 +61,7 @@
                                 <td>
                                     <img src="{{ asset('uploads/categories/'.$category->image) }}" alt="" height="15px" width="100px">
                                 </td>
+                                <td><a class="button is-primary" href="{{ route('categories.show', $category->id) }}">Voir</a></td>
                                 <td><a class="button is-warning" href="{{ route('categories.edit', $category->id) }}">Modifier</a></td>
                                 <td>
                                     <form action="{{ route('categories.destroy', $category->id) }}" method="post">
@@ -75,4 +77,6 @@
             </div>
         </div>
     </div>
+
+
 @endsection

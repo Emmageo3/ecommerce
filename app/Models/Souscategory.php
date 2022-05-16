@@ -10,7 +10,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Souscategory extends Model
 {
     use HasFactory;
-    
+
+    protected $table = 'souscategories';
+    protected $fillable = [
+
+        'category_id',
+        'nom',
+        'image',
+
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

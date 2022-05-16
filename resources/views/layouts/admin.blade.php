@@ -34,7 +34,11 @@
 
             <a class="navbar-item" href="{{ route('categories.create') }}">
                 Catégories
-              </a>
+            </a>
+
+            <a class="navbar-item" href="{{ route('souscategories.create') }}">
+                Sous-catégories
+            </a>
           </div>
       </nav>
 

@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Souscategory;
 
-class CategoryController extends Controller
+class SouscategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
-        $categories = Category::paginate(2);
-        return view('livewire.admin.categories.ajouter', compact('categories'));
+        $query = $id ? Category::whereId($id)->firstOrFail()->souscategories() : Souscategory::query();
+        $souscategories = $query->withTrashed()->oldest('nom')->paginate(5);
+        return view('livewire.admin.souscategories.ajouter', compact('souscategories', 'categories', 'id'));
     }
 
     /**
@@ -25,7 +27,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('livewire.admin.categories.ajouter');
+        $categories = Category::all();
+        return view('livewire.admin.souscategories.ajouter', compact('categories'));
     }
 
     /**
@@ -36,20 +39,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Category;
-        $category->nom = $request->input('nom');
+        $souscategory = new Souscategory;
+        $souscategory->category_id = $request->input('category_id');
+        $souscategory->nom = $request->input('nom');
 
         if($request->hasfile('image'))
         {
             $file = $request->file('image');
             $extenstion = $file->getClientOriginalExtension();
             $filename = time().'.'.$extenstion;
-            $file->move('uploads/categories/', $filename);
-            $category->image = $filename;
+            $file->move('uploads/souscategories/', $filename);
+            $souscategory->image = $filename;
         }
 
-        $category->save();
-        return redirect()->route('categories.create');
+        $souscategory->save();
+        return redirect()->route('souscategories.create');
     }
 
     /**
@@ -58,9 +62,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        return view('livewire.admin.categories.show', compact('category'));
+        //
     }
 
     /**
@@ -92,9 +96,8 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        $category->delete();
-        return redirect()->route('categories.create');
+        //
     }
 }

@@ -1,3 +1,2 @@
-<div>
-    Administrateur
-</div>
+@extends('layouts.admin')
+

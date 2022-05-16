@@ -7,6 +7,7 @@ use App\Http\Livewire\FavoriteComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeComponent::class);
+Route::get('/', HomeComponent::class)->name('home');
 Route::get('/panier', CartComponent::class);
 Route::get('/commande', CheckoutComponent::class);
 Route::get('/favoris', FavoriteComponent::class);
@@ -33,5 +34,5 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //for admin
 Route::middleware(['auth', 'verified', 'authadmin'])->group(function () {
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
-    Route::get('admin/category/add', AdminAddCategoryComponent::class)->name('admin.addcategory');
+    Route::resource('categories', CategoryController::class);
 });

@@ -131,6 +131,11 @@
                 <li>
                     <a href="">Accueil</a>
                 </li>
+                @foreach ($categories as $category)
+                    <li>
+                        <a href="#">{{ $category->nom }}</a>
+                    </li>
+                @endforeach
                 <li>
                     <a href="">A propos</a>
                 </li>
